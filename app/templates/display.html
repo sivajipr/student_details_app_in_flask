@@ -1,0 +1,36 @@
+<html>
+                <title>{{ title }} - microblog</title>
+        </head>
+        <body>
+                <center>
+                <h1>{{ head.h3 }}</h1>
+                <br>
+                <h3><a href="/index">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/display">DISPLAY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/login">LOGIN</a></h3><br><br>
+                <table border="1" style="width:100%">
+        <tr>
+                <th>first name</th>
+                <th>second name</th>
+                <th>email</th>
+                <th>sex</th>
+                <th>delete</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+                {% for ro in row %}
+        <td>{{ ro }}</td>
+                {% endfor %}
+        <td><a href="/delete">delete</a></td>
+        </tr>
+                {% endfor %}
+        </table>
+                </center>
+<FORM action="/delete" method="post">
+        <P>
+        <LABEL for="firstname">First name: </LABEL>
+                <INPUT type="text" name=fname><BR><BR>
+                <INPUT type="submit" value="Send"> <INPUT type="reset">
+        </p>
+</FORM>
+        </body>
+</html>
+~                                
